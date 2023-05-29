@@ -3,4 +3,6 @@ import * as cdk from "aws-cdk-lib";
 import { InfrastructureStack } from "../lib/infrastructure-stack";
 
 const app = new cdk.App();
-new InfrastructureStack(app, "InfrastructureStack", {});
+new InfrastructureStack(app, "InfrastructureStack", {
+  env: { region: "eu-west-1" },
+});
