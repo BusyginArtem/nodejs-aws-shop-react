@@ -1,5 +1,5 @@
-import * as cdk from 'aws-cdk-lib';
-import { Construct } from 'constructs';
+import * as cdk from "aws-cdk-lib";
+import { Construct } from "constructs";
 import * as s3 from "aws-cdk-lib/aws-s3";
 import * as iam from "aws-cdk-lib/aws-iam";
 import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
@@ -55,6 +55,18 @@ export class InfrastructureStack extends cdk.Stack {
       destinationBucket: siteBucket,
       distribution,
       distributionPaths: ["/*"],
+    });
+
+    new cdk.CfnOutput(this, "CloudFrontURL", {
+      value: distribution.distributionDomainName,
+      description: "The distribution URL",
+      exportName: "CloudfrontURL",
+    });
+
+    new cdk.CfnOutput(this, "BucketName", {
+      value: siteBucket.bucketName,
+      description: "The name of the S3 bucket",
+      exportName: "BucketName",
     });
   }
 }
