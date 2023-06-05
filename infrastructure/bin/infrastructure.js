@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+"use strict";
+// import "source-map-support/register";
+// import * as cdk from "aws-cdk-lib";
+// import { InfrastructureStack } from "../lib/infrastructure-stack";
+// export class MyCDKStack extends cdk.Stack {
+//   constructor(parent: cdk.App, name: string) {
+//     super(parent, name);
+Object.defineProperty(exports, "__esModule", { value: true });
+//     new InfrastructureStack(this, "RSSchoolAWS");
+//   }
+// }
+// const app = new cdk.App();
+// new MyCDKStack(app, "InfrastructureStack");
+// app.synth();
+require("source-map-support/register");
+const cdk = require("aws-cdk-lib");
+const infrastructure_stack_1 = require("../lib/infrastructure-stack");
+const app = new cdk.App();
+new infrastructure_stack_1.InfrastructureStack(app, "InfrastructureStack", {
+/* If you don't specify 'env', this stack will be environment-agnostic.
+ * Account/Region-dependent features and context lookups will not work,
+ * but a single synthesized template can be deployed anywhere. */
+/* Uncomment the next line to specialize this stack for the AWS Account
+ * and Region that are implied by the current CLI configuration. */
+// env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
+/* Uncomment the next line if you know exactly what Account and Region you
+ * want to deploy the stack to. */
+// env: { account: '123456789012', region: 'us-east-1' },
+/* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5mcmFzdHJ1Y3R1cmUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmZyYXN0cnVjdHVyZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUNBLHdDQUF3QztBQUN4QyxzQ0FBc0M7QUFDdEMscUVBQXFFO0FBQ3JFLDhDQUE4QztBQUM5QyxpREFBaUQ7QUFDakQsMkJBQTJCOztBQUUzQixvREFBb0Q7QUFDcEQsTUFBTTtBQUNOLElBQUk7QUFFSiw2QkFBNkI7QUFFN0IsOENBQThDO0FBRTlDLGVBQWU7QUFFZix1Q0FBcUM7QUFDckMsbUNBQW1DO0FBQ25DLHNFQUFrRTtBQUVsRSxNQUFNLEdBQUcsR0FBRyxJQUFJLEdBQUcsQ0FBQyxHQUFHLEVBQUUsQ0FBQztBQUMxQixJQUFJLDBDQUFtQixDQUFDLEdBQUcsRUFBRSxxQkFBcUIsRUFBRTtBQUNsRDs7aUVBRWlFO0FBQ2pFO21FQUNtRTtBQUNuRSw2RkFBNkY7QUFDN0Y7a0NBQ2tDO0FBQ2xDLHlEQUF5RDtBQUN6RCw4RkFBOEY7Q0FDL0YsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiIyEvdXNyL2Jpbi9lbnYgbm9kZVxyXG4vLyBpbXBvcnQgXCJzb3VyY2UtbWFwLXN1cHBvcnQvcmVnaXN0ZXJcIjtcclxuLy8gaW1wb3J0ICogYXMgY2RrIGZyb20gXCJhd3MtY2RrLWxpYlwiO1xyXG4vLyBpbXBvcnQgeyBJbmZyYXN0cnVjdHVyZVN0YWNrIH0gZnJvbSBcIi4uL2xpYi9pbmZyYXN0cnVjdHVyZS1zdGFja1wiO1xyXG4vLyBleHBvcnQgY2xhc3MgTXlDREtTdGFjayBleHRlbmRzIGNkay5TdGFjayB7XHJcbi8vICAgY29uc3RydWN0b3IocGFyZW50OiBjZGsuQXBwLCBuYW1lOiBzdHJpbmcpIHtcclxuLy8gICAgIHN1cGVyKHBhcmVudCwgbmFtZSk7XHJcblxyXG4vLyAgICAgbmV3IEluZnJhc3RydWN0dXJlU3RhY2sodGhpcywgXCJSU1NjaG9vbEFXU1wiKTtcclxuLy8gICB9XHJcbi8vIH1cclxuXHJcbi8vIGNvbnN0IGFwcCA9IG5ldyBjZGsuQXBwKCk7XHJcblxyXG4vLyBuZXcgTXlDREtTdGFjayhhcHAsIFwiSW5mcmFzdHJ1Y3R1cmVTdGFja1wiKTtcclxuXHJcbi8vIGFwcC5zeW50aCgpO1xyXG5cclxuaW1wb3J0IFwic291cmNlLW1hcC1zdXBwb3J0L3JlZ2lzdGVyXCI7XHJcbmltcG9ydCAqIGFzIGNkayBmcm9tIFwiYXdzLWNkay1saWJcIjtcclxuaW1wb3J0IHsgSW5mcmFzdHJ1Y3R1cmVTdGFjayB9IGZyb20gXCIuLi9saWIvaW5mcmFzdHJ1Y3R1cmUtc3RhY2tcIjtcclxuXHJcbmNvbnN0IGFwcCA9IG5ldyBjZGsuQXBwKCk7XHJcbm5ldyBJbmZyYXN0cnVjdHVyZVN0YWNrKGFwcCwgXCJJbmZyYXN0cnVjdHVyZVN0YWNrXCIsIHtcclxuICAvKiBJZiB5b3UgZG9uJ3Qgc3BlY2lmeSAnZW52JywgdGhpcyBzdGFjayB3aWxsIGJlIGVudmlyb25tZW50LWFnbm9zdGljLlxyXG4gICAqIEFjY291bnQvUmVnaW9uLWRlcGVuZGVudCBmZWF0dXJlcyBhbmQgY29udGV4dCBsb29rdXBzIHdpbGwgbm90IHdvcmssXHJcbiAgICogYnV0IGEgc2luZ2xlIHN5bnRoZXNpemVkIHRlbXBsYXRlIGNhbiBiZSBkZXBsb3llZCBhbnl3aGVyZS4gKi9cclxuICAvKiBVbmNvbW1lbnQgdGhlIG5leHQgbGluZSB0byBzcGVjaWFsaXplIHRoaXMgc3RhY2sgZm9yIHRoZSBBV1MgQWNjb3VudFxyXG4gICAqIGFuZCBSZWdpb24gdGhhdCBhcmUgaW1wbGllZCBieSB0aGUgY3VycmVudCBDTEkgY29uZmlndXJhdGlvbi4gKi9cclxuICAvLyBlbnY6IHsgYWNjb3VudDogcHJvY2Vzcy5lbnYuQ0RLX0RFRkFVTFRfQUNDT1VOVCwgcmVnaW9uOiBwcm9jZXNzLmVudi5DREtfREVGQVVMVF9SRUdJT04gfSxcclxuICAvKiBVbmNvbW1lbnQgdGhlIG5leHQgbGluZSBpZiB5b3Uga25vdyBleGFjdGx5IHdoYXQgQWNjb3VudCBhbmQgUmVnaW9uIHlvdVxyXG4gICAqIHdhbnQgdG8gZGVwbG95IHRoZSBzdGFjayB0by4gKi9cclxuICAvLyBlbnY6IHsgYWNjb3VudDogJzEyMzQ1Njc4OTAxMicsIHJlZ2lvbjogJ3VzLWVhc3QtMScgfSxcclxuICAvKiBGb3IgbW9yZSBpbmZvcm1hdGlvbiwgc2VlIGh0dHBzOi8vZG9jcy5hd3MuYW1hem9uLmNvbS9jZGsvbGF0ZXN0L2d1aWRlL2Vudmlyb25tZW50cy5odG1sICovXHJcbn0pO1xyXG4iXX0=
