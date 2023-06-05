@@ -36,3 +36,16 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+### `aws-deploy`
+
+Deploy app to cloudfront
+
+### `aws-destroy`
+
+Destroy deployed app from cloudfront
+
+### Links
+
+* `CloudFront URL`  https://dn1txvkuheft7.cloudfront.net
+* `S3-website`   https://serving-spa-bucket-cdk.s3.eu-west-1.amazonaws.com/index.html
