@@ -26,6 +26,8 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
   const uploadFile = async () => {
     console.log("uploadFile to", url);
 
+    const authorization_token = localStorage.getItem("authorization_token");
+
     // Get the presigned URL
     const response = await axios({
       method: "GET",
@@ -33,7 +35,21 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       params: {
         name: encodeURIComponent(file?.name || ""),
       },
+      headers: {
+        Authorization: `Basic ${authorization_token}`,
+      },
+    }).catch((error) => {
+      console.log("Error: ", error);
+
+      if (error.response.status === 401) {
+        alert("401 Authorization header is not provided!");
+      } else if (error.response.status === 403) {
+        alert("403 access is denied!");
+      }
+
+      return error;
     });
+
     console.log("File to upload: ", file?.name);
     console.log("Uploading to: ", response.data);
     const result = await fetch(response.data, {
@@ -43,6 +59,7 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
     console.log("Result: ", result);
     setFile(null);
   };
+
   return (
     <Box>
       <Typography variant="h6" gutterBottom>
