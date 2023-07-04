@@ -178,7 +178,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "b4f2e7503bf8beb4d57b2c45df85277d17f7865ab440cd58341744b3f4d8d2d5.zip"
+     "f0b00d491da9b69717631ead29f0929d68220c4e0f5a6e618af665cb1cbeab92.zip"
     ],
     "DestinationBucketName": {
      "Ref": "ResourceBucketBF776BCC"
